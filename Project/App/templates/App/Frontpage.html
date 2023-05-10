@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Title</title>
+    <style>
+    .text-center {
+  padding: 1em;
+
+}
+  </style>
+</head>
+<body>
+ <nav class="navbar navbar-dark bg-primary justify-content-center">
+
+  <span class="navbar-brand mb-0 h1">Water Management System</span>
+</nav>
+<form action="calculate" method="POST">
+    {% csrf_token %}
+    <div class="text-center">
+<label>Type Of House:</label>
+<select id="category" name="category">
+  <option value="900">2 BHK apartment</option>
+  <option value="1500">3 BHK apartment</option>
+</select><br/>
+<label>Ratio:</label>
+<input type="text" id="ratio" name="ratio"><br/>
+<label>ADD_Guest:</label>
+<input type="number" id="amount" name="guest" min="0" value="0"><br/>
+<input type="submit" class="btn btn-success" value="Calculate">
+    </div>
+</form>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+</html>
